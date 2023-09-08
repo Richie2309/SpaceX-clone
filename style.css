@@ -1,0 +1,402 @@
+@import url('https://fonts.googleapis.com/css2?family=Familjen+Grotesk:wght@400;600;700&display=swap');
+*,*::before,*::after
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body
+{
+    font-family: 'Familjen Grotesk', sans-serif;
+    background: #000;
+    color: #fff;
+}
+a
+{
+    text-decoration: none;
+    color: #fff;
+}
+ul
+{
+    list-style: none;
+}
+/* Header */
+.main-header
+{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 3;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100px;
+    padding: 0 30px;
+}
+/* Logo */
+.logo
+{
+   width: 210px;
+   height: auto; 
+}
+.logo img
+{
+    margin-left: 80px;
+    display: block;
+    width: 100%;
+    height: auto;
+}
+/* Menu */
+.main-menu
+{
+    
+}
+.main-menu ul
+{
+    margin-top: 10px;
+    display: flex;
+}
+.main-menu ul li
+{
+    font-size: 14px;
+    position: relative;
+    margin-right: 30px;
+    padding-bottom: 2px;
+}
+.shop
+{
+    margin-left: 150px;
+}
+/* Main menu bottom boder */
+.main-menu ul li a::after
+{
+    content: '';
+    width: 0;
+    right: 0;
+    bottom: -1px;
+    height: 1px;
+    background-color: #fff;
+    position: absolute;
+    transition: width 0.2s linear;
+}
+.main-menu ul li a:hover::after
+{
+    right: initial;
+    left: 0;
+    width: 100%;
+}
+/* Hamburger Menu */
+.hamburger
+{
+    position: fixed;
+    top: 40px;
+    right: 20px;
+    z-index: 10;
+    cursor: pointer;
+    width: 20px;
+    height: 20px;
+    background: none;
+    border: none;
+}
+.hamburger-top,
+.hamburger-middle,
+.hamburger-bottom
+{
+    position: absolute;
+    width: 20px;
+    height: 2px;
+    top: 0;
+    left: 0;
+    background: #fff;
+    transition: all 0.3s;
+}
+.hamburger-middle
+{
+    transform: translateY(5px);
+}
+.hamburger-bottom
+{
+    transform: translateY(10px);
+}
+/* Transition of hamburger*/
+.open
+{
+    transform: rotate(90deg);
+}
+.open .hamburger-top
+{
+    transform: rotate(45deg) translateY(6px) translateX(6px);
+}
+.open .hamburger-middle
+{
+    display: none;
+}
+.open .hamburger-bottom
+{
+    transform: rotate(-45deg) translateY(6px) translateX(-6px);
+}
+/* overlay */
+.overlay-show
+{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 3;
+}
+/* Stop body scroll*/
+.stop-scrolling
+{
+    overflow: hidden;
+}
+/* Hide mobile manu items */
+.mobile-only
+{
+    display:none;
+}
+/* Mobile menu */
+.mobile-main-menu
+{
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 350px;
+    height: 100%;
+    background: #000;
+    z-index: 4;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform: translateX(100%);
+    transition: transform 0.6s cubic-bezier(0.19, 1, 0.22, 1);
+}
+/* Bring menu from right */
+.show-menu
+{
+    transform: translateX(0);   
+}
+.mobile-main-menu ul
+{
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+    justify-content: center;
+    padding: 50px;
+    width: 100%;
+}
+.mobile-main-menu ul li
+{
+    margin-bottom: 20px;
+    font-size: 18px;
+    border-bottom: 1px #555 dotted;
+    width: 100%;
+    text-align: right;
+    padding-bottom: 8px;
+}
+.mobile-main-menu ul li a
+{
+    color: #fff;
+    transition: color 0.6s;
+}
+.mobile-main-menu ul li a:hover
+{
+    color: #aaa;
+}
+/* Sections */
+section
+{
+    position: relative;
+    height: 100vh;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.section-inner
+{
+    position: absolute;
+    bottom: 140px;
+    left: 115px;
+    max-width: 560px;
+}
+.section-inner h4
+{
+    font-size: 22px;
+    margin-bottom: 5px;
+    font-weight: 300;
+    animation: fadeInUp 0.5s ease-in-out;
+}
+.section-inner h2
+{
+    font-size: 50px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    animation: fadeInUp 0.5s ease-in-out 0.2s;
+    animation-fill-mode: both;
+}
+.section-inner a
+{
+    animation: fadeInUp 0.5s ease-in-out 0.4s;
+    animation-fill-mode: both;
+}
+span
+{
+    color: #fff;
+}
+.section-a
+{
+    background-image: url(Images/Pic\ 1.jpg);
+}
+.section-b
+{
+    background-image: url(Images/Pic\ 2.jpg);
+}
+.section-c
+{
+    background-image: url(Images/Pic\ 3.jpg);
+}
+.btn
+{
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+    text-align: center;
+    min-width: 130px;
+    padding: 15px 50px;
+    margin-top: 10px;
+    border: 2px solid #fff;
+    border-radius: 0%;
+    font-weight: bold;
+    overflow: hidden;
+    z-index: 2;
+}
+.btn:hover span
+{
+    color: #000;
+}
+.btn .hover
+{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+    color: #000;
+    z-index: -1;
+    transform: translateY(100%);
+    transition: 0.6s cubic-bezier(0.19, 1, 0.22);
+}
+.btn:hover .hover
+{
+    transform: translateY(0);
+}
+.scroll-arrow 
+{
+    position: absolute;
+    bottom: 50px;
+    left: 50%;
+    transform: translateX(-50%);
+    animation: fadeBounce 5s infinite;
+}
+/* Footer */
+footer
+{
+    position: relative;
+    padding: 25px 0;
+}
+footer ul
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+footer ul li
+{
+    margin-right: 30px;
+    color: #aaa;
+    font-size: 13px;
+    line-height: 2.5;
+}
+footer ul li a
+{
+    color: #fff;
+    transition: color 0.6;
+}
+footer ul li a:hover
+{
+    color: #aaa;
+}
+/*Animations*/
+@keyframes fadeInUp
+{
+    0%
+    {
+        opacity: 0;
+        transform: translateY(140px);
+    }
+    100%
+    {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+@keyframes fadeBounce
+{
+    0%,
+    20%,
+    80%,
+    100%
+    {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    40%
+    {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+/* Media Queries */
+@media(max-width: 960px)
+{
+    .main-menu
+    {
+        display: none;
+    }
+    .mobile-only
+    {
+        display: block;
+    }
+}
+@media(max-width: 600px)
+{
+    .section-inner
+    {
+        bottom: 75px;
+        left: 20px;
+    }
+    .section-inner h2
+    {
+        font-size: 40px;
+    }
+    footer ul li
+    {
+        margin-right: 15px;
+    }
+    footer ul li:first-child
+    {
+        position: absolute;
+        top: 30px;
+        left: 50%;
+        transform: translate(-50%,-50%);
+    }
+    .logo
+    {
+        width: 150px;
+        margin: auto;
+    }
+}
